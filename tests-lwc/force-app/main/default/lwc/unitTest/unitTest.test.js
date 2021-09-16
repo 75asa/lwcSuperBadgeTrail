@@ -38,8 +38,10 @@ describe("c-unit-test", () => {
     });
     document.body.appendChild(element);
     const div = element.shadowRoot.querySelector("div");
-    const inputElement = element.shadowRoot.querySelector("input");
-    inputElement.value = "7";
+
+    // Trigger unit status input change
+    const inputElement = element.shadowRoot.querySelector("lightning-input");
+    inputElement.value = 7;
     inputElement.dispatchEvent(new CustomEvent("change"));
 
     return Promise.resolve().then(() => {
